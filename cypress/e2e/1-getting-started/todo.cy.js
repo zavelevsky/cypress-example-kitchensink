@@ -24,13 +24,13 @@ describe('example to-do app', () => {
     // We use the `cy.get()` command to get all elements that match the selector.
     // Then, we use `should` to assert that there are two matched items,
     // which are the two default items.
-    cy.get('.todo-list li').should('have.length', 2)
+    cy.get('.todo-list li').should('have.length', 3)
 
     // We can go even further and check that the default todos each contain
     // the correct text. We use the `first` and `last` functions
     // to get just the first and last matched elements individually,
     // and then perform an assertion with `should`.
-    cy.get('.todo-list li').first().should('have.text', 'Pay electric bill')
+    cy.get('.todo-list li').first().should('have.text', 'Pay electric bills')
     cy.get('.todo-list li').last().should('have.text', 'Walk the dog')
   })
 
@@ -64,7 +64,7 @@ describe('example to-do app', () => {
     // In order to check the item, we'll find the <input> element for this <label>
     // by traversing up the dom to the parent element. From there, we can `find`
     // the child checkbox <input> element and use the `check` command to check it.
-    cy.contains('Pay electric bill')
+    cy.contains('Pay electric bills')
       .parent()
       .find('input[type=checkbox]')
       .check()
