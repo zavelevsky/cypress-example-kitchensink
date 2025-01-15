@@ -36,7 +36,7 @@ describe('example to-do app', () => {
 
   it('can add new todo items', () => {
     // We'll store our item text in a variable so we can reuse it
-    const newItem = 'Feed the cat'
+    const newItem = 'Feed the cats'
 
     // Let's get the input element and use the `type` command to
     // input our new list item. After typing the content of our item,
@@ -52,7 +52,7 @@ describe('example to-do app', () => {
     // Since assertions yield the element that was asserted on,
     // we can chain both of these assertions together into a single statement.
     cy.get('.todo-list li')
-      .should('have.length', 3)
+      .should('have.length', 4)
       .last()
       .should('have.text', newItem)
   })
